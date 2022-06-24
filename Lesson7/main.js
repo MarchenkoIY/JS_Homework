@@ -79,7 +79,7 @@ function renderNewsItems() {
 }
 
 function showSearch() {
-    if (document.documentElement.clientWidth > 500) {
+    if (document.documentElement.clientWidth > 700) {
 
         if (getComputedStyle(inputSearch).display === 'none') {
             inputSearch.style.display = 'inline-block';
