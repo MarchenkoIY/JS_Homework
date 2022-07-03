@@ -25,10 +25,12 @@ function Animal() {
   
 function Cat(name) {
     Animal.call(this);
+
+    var self = this;
       
-    var catFeed = this.feed;
+    var catFeed = self.feed;
+    catFeed();
     this.feed = function () {
-        catFeed.call(this)
         console.log('Кот доволен ^_^');
         return this;
     };
