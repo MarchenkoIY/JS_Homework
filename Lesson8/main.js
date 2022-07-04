@@ -1,9 +1,9 @@
-function Animal() {
+function Animal(name) {
     var foodAmount = 50;
   
     function formatFoodAmount() {
         return foodAmount + ' гр.';
-    };
+    }
   
     this.dailyNorm = function(amount) {
         if (!arguments.length) return formatFoodAmount();
@@ -16,21 +16,21 @@ function Animal() {
     };
   
     this.name = name;
-  
+    
+    var self = this;
+    
     this.feed = function() {
-        console.log('Насыпаем в миску ' + this.dailyNorm() + ' корма.');
-        return this;
+        console.log('Насыпаем в миску ' + self.dailyNorm() + ' корма.');
     };
 }
   
 function Cat(name) {
-    Animal.call(this);
-
-    var self = this;
+    Animal.apply(this, arguments);
       
-    var catFeed = self.feed;
-    catFeed();
+    var catFeed = this.feed;
     this.feed = function () {
+        catFeed();
+        
         console.log('Кот доволен ^_^');
         return this;
     };
