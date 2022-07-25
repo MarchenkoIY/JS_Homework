@@ -13,12 +13,12 @@ createArrayOfObject(['Vasya', 'Pyotr', 'Ivan']);
 //ДЗ № 9 Задание 2
 
 function setTime(arr) {
-    return 'Текущее время : ' + arr.reduce(function(accumulator, element) {
-        return String(accumulator).padStart(2, 0) + ' : ' + String(element).padStart(2, 0);
-    });
+    return  arr.reduce(function(accumulator, element) {
+        return accumulator + ' : ' + element;
+    }, 'Текущее время');
 }
 
-setTime([00, 02, 15]);
+setTime(['00', '02', '15']);
 
 
 
