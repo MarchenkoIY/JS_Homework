@@ -91,7 +91,11 @@ divideArr([1, 2, 3, 4, 5], 0);
 //Вариант с логарифмом
 
 function isPowerOfTwo(number) {
-    return isInteger(Math.log2(number));
+    if (Math.log2(number) % 1 === 0) {
+        return true;
+    }
+
+    return false;
 }
 
 isPowerOfTwo(64);
