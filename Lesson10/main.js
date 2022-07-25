@@ -36,16 +36,7 @@ isPolindrome('А роза упала на лапу Азора');
 //ДЗ № 8 Задание 4
 
 function areAnagrams(str1, str2) {
-    str1 = str1.toLowerCase().split('').sort();
-    str2 = str2.toLowerCase().split('').sort();
-
-    if (str1.length !== str2.length) {
-        return false;
-    } else {
-        return str1.every(function (element, index) {
-            return element === str2[index];
-        });
-    }
+    return str1.toLowerCase().split('').sort().join('') === str2.toLowerCase().split('').sort().join('');
 }
 
 areAnagrams('кот', 'Отк');
