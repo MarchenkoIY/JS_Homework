@@ -105,7 +105,7 @@ isPowerOfTwo(54);
 //Вариант с циклом
 
 function isPowerOfTwo(number) {
-    while (Number.isInteger(number)) {
+    while (number % 1 === 0 && number >= 1) {
         number /= 2;
 
         if (number === 1) {
