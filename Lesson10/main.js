@@ -25,20 +25,9 @@ findPositiveNumber([-1, 0, 2, 34, -2]);
 //ДЗ № 8 Задание 3
 
 function isPolindrome(str) {
-    str = str.toLowerCase().split(' ').join('').split('');
-
-    var newArr = str.map(function(element) {
-        if (element === str[str.length - 1 - str.indexOf(element)]) {
-            return true;
-        }
-            
-        return false;
-    });
-
-    return newArr.every(function(element) {
-        return element;
-    });
+    return str.toLowerCase().split(' ').join('') === str.toLowerCase().split(' ').join('').split('').reverce().join('');
 }
+
 
 isPolindrome('А роза упала на лапу Азора');
 
