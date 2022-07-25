@@ -106,11 +106,11 @@ isPowerOfTwo(54);
 
 function isPowerOfTwo(number) {
     while (number % 1 === 0 && number >= 1) {
-        number /= 2;
-
         if (number === 1) {
             return true;
         }
+
+        number /= 2;
     }
     
     return false;
