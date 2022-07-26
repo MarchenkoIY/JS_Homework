@@ -18,16 +18,15 @@ table.addEventListener('click', function(event) {
         target.append(input);
         input.focus();
 
-        input.onblur = function() {
+        input.addEventListener('keydown', function(event) {
+            if (event.code === 'Enter') {
+                input.blur();
+            }
+        });
+
+        input.addEventListener('blur', function() {
             target.innerText = input.value;
             input.remove();
-        }
-
-        input.onkeydown = function(event) {
-            if (event.code === 'Enter') {
-                target.innerText = input.value;
-                input.remove();
-            }
-        }
+        });
     }
 });

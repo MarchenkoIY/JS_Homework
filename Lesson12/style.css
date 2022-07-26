@@ -4,7 +4,8 @@ table {
 
 td {
     width: 200px;
-    padding: 10px;
+    height: 30px;
+    padding: 5px;
     border: 1px solid black;
     cursor:text;
 }
@@ -13,4 +14,9 @@ td[colspan = '3'] {
     text-align: center;
     cursor: pointer;
 
+}
+
+input {
+    max-width: 100%;
+    max-height: 100%;
 }
