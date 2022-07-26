@@ -25,20 +25,9 @@ findPositiveNumber([-1, 0, 2, 34, -2]);
 //ДЗ № 8 Задание 3
 
 function isPolindrome(str) {
-    str = str.toLowerCase().split(' ').join('').split('');
-
-    var newArr = str.map(function(element) {
-        if (element === str[str.length - 1 - str.indexOf(element)]) {
-            return true;
-        }
-            
-        return false;
-    });
-
-    return newArr.every(function(element) {
-        return element;
-    });
+    return str.toLowerCase().split(' ').join('') === str.toLowerCase().split(' ').join('').split('').reverce().join('');
 }
+
 
 isPolindrome('А роза упала на лапу Азора');
 
@@ -47,16 +36,7 @@ isPolindrome('А роза упала на лапу Азора');
 //ДЗ № 8 Задание 4
 
 function areAnagrams(str1, str2) {
-    str1 = str1.toLowerCase().split('').sort();
-    str2 = str2.toLowerCase().split('').sort();
-
-    if (str1.length !== str2.length) {
-        return false;
-    } else {
-        return str1.every(function (element, index) {
-            return element === str2[index];
-        });
-    }
+    return str1.toLowerCase().split('').sort().join('') === str2.toLowerCase().split('').sort().join('');
 }
 
 areAnagrams('кот', 'Отк');
@@ -91,7 +71,11 @@ divideArr([1, 2, 3, 4, 5], 0);
 //Вариант с логарифмом
 
 function isPowerOfTwo(number) {
-    return isInteger(Math.log2(number));
+    if (Math.log2(number) % 1 === 0) {
+        return true;
+    }
+
+    return false;
 }
 
 isPowerOfTwo(64);
@@ -101,12 +85,12 @@ isPowerOfTwo(54);
 //Вариант с циклом
 
 function isPowerOfTwo(number) {
-    while (Number.isInteger(number)) {
-        number /= 2;
-
+    while (number % 1 === 0 && number >= 1) {
         if (number === 1) {
             return true;
         }
+
+        number /= 2;
     }
     
     return false;
